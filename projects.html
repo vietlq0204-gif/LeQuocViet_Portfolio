@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        name="description"
+        content="Portfolio of Le Quoc Viet, a game developer focused on Unity gameplay systems, UI workflows, and performance optimization."
+    >
+    <title>Le Quoc Viet | Unity Developer</title>
+    <link href="./CSS/Index_css/body.css" rel="stylesheet">
+    <link href="./CSS/Index_css/project.css" rel="stylesheet">
+    <link href="./CSS/Index_css/full-project.css" rel="stylesheet">
+    <script src="data/site-i18n.js" defer></script>
+    <script src="data/project-data.js" defer></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="page-back-home">
+        <a
+            class="btn-project-detail btn-back-home"
+            href="index.html"
+            aria-label="Back Home"
+            title="Back Home"
+            data-i18n-attr="aria-label:buttons.backHome;title:buttons.backHome"
+        >HOME
+        </a>
+    </div>
+
+    <div class="language-switcher">
+        <button
+            id="language-toggle"
+            class="btn-lang"
+            type="button"
+            data-i18n-attr="aria-label:language.switcher"
+        >EN</button>
+    </div>
+
+    <main class="catalog-page">
+        <section class="catalog-shell" aria-labelledby="projects-page-title">
+            <div class="catalog-header">
+                <div>
+<!--                    <p class="section-label" data-i18n="sections.selectedWork">Selected Work</p>-->
+                    <h1 id="projects-page-title" class="catalog-page-title" data-i18n="sections.fullProjects">Full Projects</h1>
+                </div>
+            </div>
+
+            <div class="catalog-tabs" role="tablist" data-i18n-attr="aria-label:sections.fullProjects">
+                <button class="catalog-tab" type="button" data-project-filter="game" data-i18n="catalog.game">Game</button>
+                <button class="catalog-tab" type="button" data-project-filter="other" data-i18n="catalog.other">Other</button>
+            </div>
+
+            <div class="catalog-grid" data-project-catalog-grid></div>
+            <p class="catalog-empty" data-project-catalog-empty data-i18n="catalog.empty" hidden>No projects in this section yet.</p>
+        </section>
+    </main>
+
+    <div id="project-popup" class="popup-overlay" hidden>
+        <div class="popup-box" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="popup-title">
+            <div class="popup-header">
+                <div>
+                    <h2 id="popup-title" class="popup-title" data-i18n="popup.title">Project Details</h2>
+                </div>
+                <div class="popup-actions">
+                    <button
+                        class="btn-close"
+                        type="button"
+                        aria-label="Close project details"
+                        data-i18n-attr="aria-label:popup.closeLabel"
+                    >&times;</button>
+                </div>
+            </div>
+
+            <div class="popup-layout">
+                <section class="popup-main">
+                    <div class="popup-stage">
+                        <div class="popup-video-wrapper">
+                            <iframe
+                                class="popup-video"
+                                title="Project gameplay preview"
+                                src="about:blank"
+                                allow="autoplay; encrypted-media; picture-in-picture"
+                                referrerpolicy="strict-origin-when-cross-origin"
+                                allowfullscreen
+                            ></iframe>
+                        </div>
+                        <img class="popup-stage-image" src="" alt="" hidden>
+                    </div>
+
+                    <div
+                        class="popup-thumbnails"
+                        aria-label="Project media gallery"
+                        data-i18n-attr="aria-label:popup.galleryLabel"
+                    ></div>
+
+                    <div class="popup-info">
+                        <section class="info-box" aria-labelledby="popup-description-title">
+                            <h3 id="popup-description-title" data-i18n="labels.overview">OVERVIEW</h3>
+                            <p class="popup-desc"></p>
+                        </section>
+
+                        <section class="info-box" aria-labelledby="popup-technical-title">
+                            <h3 id="popup-technical-title" data-i18n="labels.technology">TECHNOLOGY</h3>
+                            <ul class="popup-tech"></ul>
+                        </section>
+
+                        <section class="info-box" aria-labelledby="popup-role-title">
+                            <h3 id="popup-role-title" data-i18n="labels.myRole">MY ROLE</h3>
+                            <ul class="popup-role"></ul>
+                        </section>
+                    </div>
+                </section>
+
+                <aside class="popup-sidebar">
+                    <img class="popup-cover" src="" alt="">
+                    <p class="popup-summary"></p>
+
+                    <dl class="popup-meta">
+                        <div class="popup-meta-row" data-meta-row="review">
+                            <dt data-i18n="labels.review">Review</dt>
+                            <dd class="popup-review"></dd>
+                        </div>
+                        <div class="popup-meta-row" data-meta-row="release">
+                            <dt data-i18n="labels.release">Release</dt>
+                            <dd class="popup-release"></dd>
+                        </div>
+                        <div class="popup-meta-row" data-meta-row="developer">
+                            <dt data-i18n="labels.developer">Developer</dt>
+                            <dd class="popup-developer"></dd>
+                        </div>
+                        <div class="popup-meta-row" data-meta-row="publisher">
+                            <dt data-i18n="labels.publisher">Publisher</dt>
+                            <dd class="popup-publisher"></dd>
+                        </div>
+                    </dl>
+
+                    <div class="popup-tags-block">
+                        <p class="popup-tags-title" data-i18n="labels.popularTags">Popular Tags</p>
+                        <div class="popup-tags"></div>
+                    </div>
+
+                    <a
+                        class="btn-github popup-github-link"
+                        href=""
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        data-i18n="buttons.github"
+                    >GitHub</a>
+                </aside>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
