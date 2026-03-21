@@ -5,6 +5,7 @@
 
 .skill-card {
   display: grid;
+  align-content: start;
   gap: 1rem;
   padding: 1.5rem;
   border: 1px solid var(--surface-border);

@@ -6,8 +6,8 @@ window.PORTFOLIO_PROJECT_DATA = {
         vi: "Bay Lên Bầu Trời",
       },
       summary: {
-        en: "3D game, Hyper Casual, Android. Control your spaceship to fly to different planets in the solar system..",
-        vi: "trò chơi 3D,  Hyper Casual, Android. Điều khiển tàu không gian của bạn bay đến các hành tính khác nhau trong hệ mặt trời..",
+        en: "3D game, Hyper Casual, Android. Control your spaceship to fly to different planets in the solar system.",
+        vi: "Trò chơi 3D,  Hyper Casual, Android. Điều khiển tàu không gian của bạn bay đến các hành tính khác nhau trong hệ mặt trời.",
       },
       overview: {
         en: "Trong vai một phi công vũ trụ được giao nhiệm vụ tái khám phá và liên lạc với các hành tinh thuộc địa trong hệ mặt trời. Trong quá trình di chuyển  ta phải tránh né các chướng ngại vật, thu thập các đồng xu để nâng cấp tàu cho chuyển đi tiếp theo.",
@@ -18,8 +18,8 @@ window.PORTFOLIO_PROJECT_DATA = {
         vi: ["Unity", "C#", "Event-Driven Architecture", "ScriptableObject", "Addressables", "Object Pooling", "State Machine"],
       },
       roles: {
-        en: ["modular JSON-based save/load system", "progression tree", "UI with UI Toolkit", "Optimized mobile runtime", "Integrated AdMob rewarded ads"],
-        vi: ["modular JSON-based save/load system", "progression tree", "UI with UI Toolkit", "Optimized mobile runtime", "Integrated AdMob rewarded ads"],
+        en: ["Modular JSON-based save/load system", "Progression tree", "UI with UI Toolkit", "Optimized mobile runtime", "Integrated AdMob rewarded ads"],
+        vi: ["Modular JSON-based save/load system", "Progression tree", "UI with UI Toolkit", "Optimized mobile runtime", "Integrated AdMob rewarded ads"],
       },
       tags: {
         en: ["3D", "Unity", "Android", "Hyper Casual", "Indie"],
@@ -95,8 +95,8 @@ window.PORTFOLIO_PROJECT_DATA = {
       ],
       cover: "",
       review: {
-        en: "Featured Portfolio Project",
-        vi: "Dự Án Nổi Bật",
+        en: "",
+        vi: "",
       },
       release: "2025",
       developer: "DWA Studio",

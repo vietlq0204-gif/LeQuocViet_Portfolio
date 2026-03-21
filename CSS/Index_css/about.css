@@ -41,10 +41,9 @@
 
 .profile-img {
   width: min(100%, 280px);
-  aspect-ratio: 1;
+  max-height: 320px;
   object-fit: cover;
-  border-radius: 50%;
-  border: 4px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-lg);
   box-shadow: var(--shadow-lg);
 }
 

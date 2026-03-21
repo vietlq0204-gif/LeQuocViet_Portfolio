@@ -29,14 +29,14 @@
 
     <main>
         <section id="hero" class="hero" aria-labelledby="hero-title">
-            <div class="hero-content_1">
+            <div id="about" class="hero-content_1">
                 <div class="hero-panel hero-panel--intro">
 <!--                    <p class="section-label" data-i18n="hero.label">Portfolio</p>-->
                     <h1 id="hero-title" class="hero-title">
                         <span class="hero-name">Le Quoc Viet</span>
                         <span class="hero-role" data-i18n="hero.role">Unity Developer</span>
                     </h1>
-                    <p class="hero-summary" data-i18n="hero.summary">Full stack game developer with Unity and C#.</p>
+                    <p class="hero-summary" data-i18n="about.description">Full stack game developer with Unity and C#.</p>
                     <a
                         class="btn-cv"
                         href="https://drive.google.com/file/d/1YkVPWnd_HZ5ChdLBRm-S3GAMu5Cd_nYd/view?usp=drive_link"
@@ -48,7 +48,26 @@
                     </a>
                 </div>
 
-                <div class="hero-panel hero-panel--placeholder" aria-hidden="true"></div>
+                <div class="hero-panel hero-panel--placeholder">
+                    <div class="hero-about-panel">
+                        <div class="about-image">
+                            <img
+                                src="https://res.cloudinary.com/dfzck0syr/image/upload/v1755538359/Viet_A_01_kojxnv.jpg"
+                                alt="Portrait of Le Quoc Viet"
+                                class="profile-img"
+                                loading="lazy"
+                                data-i18n-attr="alt:about.portraitAlt"
+                            >
+                        </div>
+
+                        <aside class="skills-grid" aria-labelledby="technical-skills-title">
+                            <div class="skill-card">
+                                <h2 id="technical-skills-title" class="skill-title" data-i18n="sections.technicalSkills">Technical Skills</h2>
+                                <ul class="skill-list" data-i18n-list="about.skills"></ul>
+                            </div>
+                        </aside>
+                    </div>
+                </div>
             </div>
 
             <div class="hero-content_2">
@@ -172,41 +191,6 @@
             </div>
         </section>
 
-        <section id="about" class="about" aria-labelledby="about-title">
-            <div class="about-container">
-                <div class="about-text">
-<!--                    <p class="section-label" data-i18n="sections.about">About</p>-->
-                    <h2 id="about-title" class="about-title">Le Quoc Viet</h2>
-                    <p class="about-description" data-i18n="about.description"></p>
-                    <a
-                        class="btn-cv"
-                        href="https://drive.google.com/file/d/1YkVPWnd_HZ5ChdLBRm-S3GAMu5Cd_nYd/view?usp=drive_link"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        data-i18n="buttons.viewCv"
-                    >
-                        View CV
-                    </a>
-                </div>
-
-                <div class="about-image">
-                    <img
-                        src="https://res.cloudinary.com/dfzck0syr/image/upload/v1755538359/Viet_A_01_kojxnv.jpg"
-                        alt="Portrait of Le Quoc Viet"
-                        class="profile-img"
-                        loading="lazy"
-                        data-i18n-attr="alt:about.portraitAlt"
-                    >
-                </div>
-
-                <aside class="skills-grid" aria-labelledby="technical-skills-title">
-                    <div class="skill-card">
-                        <h3 id="technical-skills-title" class="skill-title" data-i18n="sections.technicalSkills">Technical Skills</h3>
-                        <ul class="skill-list" data-i18n-list="about.skills"></ul>
-                    </div>
-                </aside>
-            </div>
-        </section>
     </main>
 
     <div id="project-popup" class="popup-overlay" hidden>
@@ -326,9 +310,9 @@
             </div>
 
             <nav class="footer-links" aria-label="Footer links">
-                <a class="footer-link" href="#about" data-i18n="footer.about">About</a>
-                <a class="footer-link" href="#projects" data-i18n="footer.projects">Projects</a>
-                <a class="footer-link" href="mailto:vietlq7721900@gmail.com" data-i18n="footer.email">Email</a>
+<!--                <a class="footer-link" href="#about" data-i18n="footer.about">About</a>-->
+<!--                <a class="footer-link" href="#projects" data-i18n="footer.projects">Projects</a>-->
+<!--                <a class="footer-link" href="mailto:vietlq7721900@gmail.com" data-i18n="footer.email">Email</a>-->
             </nav>
         </div>
     </footer>

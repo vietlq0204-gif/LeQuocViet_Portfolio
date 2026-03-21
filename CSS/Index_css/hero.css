@@ -10,7 +10,7 @@
 
 .hero-content_1 {
   display: grid;
-  grid-template-rows: repeat(2, minmax(0, 1fr));
+  grid-template-rows: auto minmax(0, 1fr);
   gap: 1.5rem;
   min-width: 0;
   min-height: clamp(34rem, 72vh, 48rem);
@@ -30,12 +30,32 @@
 }
 
 .hero-panel--placeholder {
-  /*background-image: url("https://res.cloudinary.com/dfzck0syr/image/upload/v1773413646/Unity_logo_animated_k2gelh.gif");*/
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: auto;
-  opacity: 1;
+  display: block;
+  padding: 0;
+  border: 0;
+  background: none;
+  box-shadow: none;
   min-height: 0;
+}
+
+.hero-about-panel {
+  display: grid;
+  grid-template-columns: minmax(180px, 240px) minmax(0, 1fr);
+  gap: 1.5rem;
+  height: 100%;
+}
+
+.hero-about-panel .about-image,
+.hero-about-panel .skill-card {
+  height: 100%;
+}
+
+.hero-about-panel .skills-grid {
+  min-width: 0;
+}
+
+.hero-about-panel .profile-img {
+  width: min(100%, 220px);
 }
 
 .hero-title {
@@ -54,9 +74,10 @@
 
 .hero-summary {
   margin: 0;
-  max-width: 32rem;
+  max-width: none;
   color: var(--muted);
   font-size: 1.05rem;
+  line-height: 1.6;
 }
 
 .hero-content_2 {
@@ -177,6 +198,10 @@
     min-height: clamp(30rem, 65vh, 42rem);
   }
 
+  .hero-about-panel {
+    grid-template-columns: minmax(180px, 240px) minmax(0, 1fr);
+  }
+
   .popup-content-grid {
     grid-template-columns: 1fr;
   }
@@ -193,15 +218,16 @@
   }
 
   .hero-content_1 {
-    grid-template-rows: repeat(2, minmax(12rem, 1fr));
+    grid-template-rows: auto auto;
     min-height: auto;
   }
 
-  @media (max-width: 640px) {
-    .hero-content_1 {
-      grid-template-rows: auto;
-      min-height: auto;
-    }
+  .hero-about-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-about-panel .about-image {
+    min-height: 0;
   }
 
   .hero-panel {

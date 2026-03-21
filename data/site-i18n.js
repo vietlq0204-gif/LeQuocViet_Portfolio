@@ -1,70 +1,189 @@
-window.PORTFOLIO_I18N = {
-  defaultLanguage: "en",
-  supportedLanguages: ["en", "vi"],
-  translations: {
-    en: {
-      meta: {
-        title: "Le Quoc Viet | Unity Developer",
-        description:
-          "Portfolio of Le Quoc Viet, a game developer focused on Unity gameplay systems, UI workflows, and performance optimization.",
+window.PORTFOLIO_I18N = (() => {
+  const supportedLanguages = ["en", "vi"];
+
+  // Keep English and Vietnamese text side by side here for easier editing.
+  const copy = {
+    meta: {
+      title: {
+        en: "Le Quoc Viet | Unity Developer",
+        vi: "Le Quoc Viet | Lập Trình Viên Unity",
       },
-      language: {
-        switcher: "Toggle Language",
+      description: {
+        en: "My main stack is Unity and C#. I built the game's core system with a focus on ease of maintenance and extensibility.",
+        vi: "Stack chính của tôi là Unity và C#. Tôi xây dựng hệ thống lõi của trò chơi với trọng tâm là dễ bảo trì và mở rộng.",
       },
-      hero: {
-        label: "Portfolio",
-        role: "Unity Developer",
-        summary: "Full stack game developer with Unity and C#.",
+    },
+    language: {
+      switcher: {
+        en: "Toggle Language",
+        vi: "Đổi Ngôn Ngữ",
       },
-      featured: {
-        label: "Featured Project",
+    },
+    hero: {
+      label: {
+        en: "Portfolio",
+        vi: "Hồ Sơ",
       },
-      sections: {
-        selectedWork: "Selected Work",
-        projects: "Projects",
-        about: "About",
-        technicalSkills: "Technical Skills",
-        contact: "Contact",
-        fullProjects: "Full Projects",
+      role: {
+        en: "Unity Developer",
+        vi: "Lập Trình Viên Unity",
       },
-      labels: {
-        overview: "Overview",
-        technology: "Technology",
-        myRole: "My Role",
-        review: "Review",
-        release: "Release",
-        developer: "Developer",
-        publisher: "Publisher",
-        popularTags: "Popular Tags",
+      summary: {
+        en: "Full stack game developer with Unity and C#.",
+        vi: "Lập trình viên game full-stack với Unity và C#.",
       },
-      buttons: {
-        viewCv: "View CV",
-        viewDetails: "View Details",
-        seeMore: "See More",
-        backHome: "Back Home",
-        github: "GitHub",
-        download: "Download",
+    },
+    featured: {
+      label: {
+        en: "Featured Project",
+        vi: "Dự Án Nổi Bật",
       },
-      catalog: {
-        game: "Game",
-        other: "Other",
-        empty: "No projects in this section yet.",
+    },
+    sections: {
+      selectedWork: {
+        en: "Selected Work",
+        vi: "Dự Án Tiêu Biểu",
       },
-      popup: {
-        title: "Project Details",
-        galleryLabel: "Project media gallery",
-        closeLabel: "Close project details",
-        videoTitleSuffix: "gameplay preview",
-        keyArtSuffix: "key art",
-        screenshot: "Shot",
-        trailer: "Trailer",
-        play: "Play",
+      projects: {
+        en: "Projects",
+        vi: "Dự Án",
       },
       about: {
-        description:
-          "I build practical game features with a strong focus on maintainable code, performance, and team collaboration. My main stack is Unity and C#, with experience across gameplay systems, UI, AI, save/load flows, and production tooling.",
-        portraitAlt: "Portrait of Le Quoc Viet",
-        skills: [
+        en: "About",
+        vi: "Giới Thiệu",
+      },
+      technicalSkills: {
+        en: "Technical Skills",
+        vi: "Kỹ Năng Kỹ Thuật",
+      },
+      contact: {
+        en: "Contact",
+        vi: "Liên Hệ",
+      },
+      fullProjects: {
+        en: "Full Projects",
+        vi: "Toàn Bộ Dự Án",
+      },
+    },
+    labels: {
+      overview: {
+        en: "Overview",
+        vi: "Tổng Quan",
+      },
+      technology: {
+        en: "Technology",
+        vi: "Công Nghệ",
+      },
+      myRole: {
+        en: "My Role",
+        vi: "Vai Trò",
+      },
+      review: {
+        en: "Review",
+        vi: "Đánh Giá",
+      },
+      release: {
+        en: "Release",
+        vi: "Phát Hành",
+      },
+      developer: {
+        en: "Developer",
+        vi: "Phát Triển",
+      },
+      publisher: {
+        en: "Publisher",
+        vi: "Phát Hành",
+      },
+      popularTags: {
+        en: "Popular Tags",
+        vi: "Thẻ Phổ Biến",
+      },
+    },
+    buttons: {
+      viewCv: {
+        en: "View CV",
+        vi: "Xem CV",
+      },
+      viewDetails: {
+        en: "View Details",
+        vi: "Xem Chi Tiết",
+      },
+      seeMore: {
+        en: "See More",
+        vi: "Xem Thêm",
+      },
+      backHome: {
+        en: "Back Home",
+        vi: "Trang Chủ",
+      },
+      github: {
+        en: "GitHub",
+        vi: "GitHub",
+      },
+      download: {
+        en: "Download",
+        vi: "Tải Xuống",
+      },
+    },
+    catalog: {
+      game: {
+        en: "Game",
+        vi: "Game",
+      },
+      other: {
+        en: "Other",
+        vi: "Khác",
+      },
+      empty: {
+        en: "No projects in this section yet.",
+        vi: "Chưa có dự án nào trong mục này.",
+      },
+    },
+    popup: {
+      title: {
+        en: "Project Details",
+        vi: "Chi Tiết Dự Án",
+      },
+      galleryLabel: {
+        en: "Project media gallery",
+        vi: "Thư Viện Media Dự Án",
+      },
+      closeLabel: {
+        en: "Close project details",
+        vi: "Đóng Chi Tiết Dự Án",
+      },
+      videoTitleSuffix: {
+        en: "gameplay preview",
+        vi: "video gameplay",
+      },
+      keyArtSuffix: {
+        en: "key art",
+        vi: "ảnh đại diện",
+      },
+      screenshot: {
+        en: "Shot",
+        vi: "Ảnh",
+      },
+      trailer: {
+        en: "Trailer",
+        vi: "Trailer",
+      },
+      play: {
+        en: "Play",
+        vi: "Phát",
+      },
+    },
+    about: {
+      description: {
+        en: "My main stack is Unity and C#. I built the game's core system with a focus on ease of maintenance and extensibility.",
+        vi: "Stack chính của tôi là Unity và C#. Tôi xây dựng hệ thống lõi của trò chơi với trọng tâm là dễ bảo trì và mở rộng.",
+      },
+      portraitAlt: {
+        en: "Portrait of Le Quoc Viet",
+        vi: "Chân dung của Lê Quốc Việt",
+      },
+      skills: {
+        en: [
           "Unity Engine, Mono, .NET Standard, and IL2CPP.",
           "C# and async/await workflows.",
           "OOP, SOLID, singleton, state machine, observer, and factory patterns.",
@@ -72,78 +191,7 @@ window.PORTFOLIO_I18N = {
           "Profiling, object pooling, and runtime optimization.",
           "Git, Unity Package Manager, and build pipeline delivery for PC and mobile.",
         ],
-      },
-      footer: {
-        country: "Vietnam",
-        about: "About",
-        projects: "Projects",
-        email: "Email",
-        copyright: "Copyright 2025 (c) Le Quoc Viet",
-      },
-    },
-    vi: {
-      meta: {
-        title: "Le Quoc Viet | Lập Trình Viên Unity",
-        description:
-          "Portfolio của Lê Quốc Việt, lập trình viên game tập trung vào gameplay systems, UI workflows và tối ưu hiệu năng với Unity.",
-      },
-      language: {
-        switcher: "Đổi Ngôn Ngữ",
-      },
-      hero: {
-        label: "Hồ Sơ",
-        role: "Lập Trình Viên Unity",
-        summary: "Lập trình viên game full-stack với Unity và C#.",
-      },
-      featured: {
-        label: "Dự Án Nổi Bật",
-      },
-      sections: {
-        selectedWork: "Dự Án Tiêu Biểu",
-        projects: "Dự Án",
-        about: "Giới Thiệu",
-        technicalSkills: "Kỹ Năng Kỹ Thuật",
-        contact: "Liên Hệ",
-        fullProjects: "Toàn Bộ Dự Án",
-      },
-      labels: {
-        overview: "Tổng Quan",
-        technology: "Công Nghệ",
-        myRole: "Vai Trò",
-        review: "Đánh Giá",
-        release: "Phát Hành",
-        developer: "Phát Triển",
-        publisher: "Phát Hành",
-        popularTags: "Thẻ Phổ Biến",
-      },
-      buttons: {
-        viewCv: "Xem CV",
-        viewDetails: "Xem Chi Tiết",
-        seeMore: "Xem Thêm",
-        backHome: "Trang Chủ",
-        github: "GitHub",
-        download: "Táº£i Xuá»‘ng",
-      },
-      catalog: {
-        game: "Game",
-        other: "Khác",
-        empty: "Chưa có dự án nào trong mục này.",
-      },
-      popup: {
-        title: "Chi Tiết Dự Án",
-        galleryLabel: "Thư Viện Media Dự Án",
-        closeLabel: "Đóng Chi Tiết Dự Án",
-        videoTitleSuffix: "video gameplay",
-        keyArtSuffix: "ảnh đại diện",
-        screenshot: "Ảnh",
-        trailer: "Trailer",
-        play: "Phát",
-      },
-      about: {
-        description:
-          "Tôi xây dựng các tính năng game thực tế với trọng tâm là mã nguồn dễ bảo trì, hiệu năng ổn định và khả năng phối hợp nhóm tốt. Stack chính của tôi là Unity và C#, cùng kinh nghiệm về gameplay systems, UI, AI, save/load flow và công cụ hỗ trợ sản xuất.",
-        portraitAlt: "Chân dung của Lê Quốc Việt",
-        skills: [
+        vi: [
           "Unity Engine, Mono, .NET Standard và IL2CPP.",
           "C# và quy trình async/await.",
           "OOP, SOLID, singleton, state machine, observer và factory pattern.",
@@ -152,13 +200,54 @@ window.PORTFOLIO_I18N = {
           "Git, Unity Package Manager và build pipeline cho PC và mobile.",
         ],
       },
-      footer: {
-        country: "Việt Nam",
-        about: "Giới Thiệu",
-        projects: "Dự Án",
-        email: "Email",
-        copyright: "Bản Quyền 2025 (c) Le Quoc Viet",
+    },
+    footer: {
+      country: {
+        en: "Vietnam",
+        vi: "Việt Nam",
+      },
+      about: {
+        en: "About",
+        vi: "Giới Thiệu",
+      },
+      projects: {
+        en: "Projects",
+        vi: "Dự Án",
+      },
+      email: {
+        en: "Email",
+        vi: "Email",
+      },
+      copyright: {
+        en: "Copyright 2025 (c) Le Quoc Viet",
+        vi: "Bản Quyền 2025 (c) Le Quoc Viet",
       },
     },
-  },
-};
+  };
+
+  const buildLanguageTree = (node, language) => {
+    if (Array.isArray(node)) {
+      return node.map((item) => buildLanguageTree(item, language));
+    }
+
+    if (!node || typeof node !== "object") {
+      return node;
+    }
+
+    if (supportedLanguages.some((code) => code in node)) {
+      return node[language] ?? node.en ?? node.vi ?? "";
+    }
+
+    return Object.fromEntries(
+      Object.entries(node).map(([key, value]) => [key, buildLanguageTree(value, language)]),
+    );
+  };
+
+  return {
+    defaultLanguage: "en",
+    supportedLanguages,
+    translations: Object.fromEntries(
+      supportedLanguages.map((language) => [language, buildLanguageTree(copy, language)]),
+    ),
+  };
+})();
