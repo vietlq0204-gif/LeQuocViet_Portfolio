@@ -45,6 +45,7 @@ const getProjectEntries = () => Object.entries(projectStore?.items || {});
 const getProjectById = (projectId) => projectStore?.items?.[projectId] || null;
 const getProjectCatalogSection = (project) => project?.catalog?.section || defaultCatalogSection;
 const getProjectFallbackImage = (project) => project?.cover || project?.images?.[0] || "";
+const getFeaturedProjectEntry = () => getProjectEntries()[0] || null;
 
 const fillList = (listElement, items) => {
   if (!listElement) {
@@ -168,17 +169,15 @@ const applyStaticTranslations = (language) => {
 };
 
 const renderFeaturedProject = (language) => {
-  const featuredElement = document.querySelector(".featured-project[data-project-id]");
+  const featuredElement = document.querySelector(".featured-project[data-project-entry]");
+  const featuredEntry = getFeaturedProjectEntry();
 
-  if (!featuredElement) {
+  if (!featuredElement || !featuredEntry) {
     return;
   }
 
-  const project = getProjectById(featuredElement.dataset.projectId);
-
-  if (!project) {
-    return;
-  }
+  const [projectId, project] = featuredEntry;
+  featuredElement.dataset.projectId = projectId;
 
   const videoEl = featuredElement.querySelector(".Preview-video");
   const titleEl = featuredElement.querySelector("#featured-project-title");

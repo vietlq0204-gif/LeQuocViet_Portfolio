@@ -1,5 +1,4 @@
 window.PORTFOLIO_PROJECT_DATA = {
-  featuredId: "the-lost-reminiscence",
   items: {
     "Sky Ascent": {
       title: {
@@ -214,5 +213,7 @@ window.PORTFOLIO_PROJECT_DATA = {
         cardPrimary: "image",
       },
     },
+    
+    
   },
 };
