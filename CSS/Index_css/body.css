@@ -95,6 +95,7 @@ a {
 .btn-cv,
 .btn-project-detail,
 .btn-github,
+.btn-download,
 .btn-lang,
 .btn-close {
   display: inline-flex;
@@ -128,6 +129,7 @@ a {
 .btn-cv:hover,
 .btn-project-detail:hover,
 .btn-github:hover,
+.btn-download:hover,
 .btn-lang:hover,
 .btn-close:hover {
   background-color: #000000;
@@ -138,6 +140,7 @@ a {
 .btn-cv:focus-visible,
 .btn-project-detail:focus-visible,
 .btn-github:focus-visible,
+.btn-download:focus-visible,
 .btn-lang:focus-visible,
 .btn-close:focus-visible,
 .footer-link:focus-visible {

@@ -36,6 +36,7 @@
   border-radius: 30px;
   background-color: var(--surface);
   box-shadow: var(--shadow-lg);
+  cursor: pointer;
   transform-origin: center center;
   backface-visibility: hidden;
   will-change: transform, box-shadow;
@@ -43,6 +44,7 @@
 }
 
 .project-card:hover,
+.project-card:focus-visible,
 .project-card:focus-within {
   z-index: 2;
   transform: translateY(-6px) scale(1.02);
@@ -67,6 +69,7 @@
   height: 100%;
   object-fit: cover;
   border-radius: inherit;
+  transition: transform 0.28s ease;
 }
 
 .project-card-content {
@@ -90,25 +93,6 @@
   margin: 0;
   color: var(--muted);
   line-height: 1.45;
-  overflow: hidden;
-  max-height: 0;
-  opacity: 0;
-  transform: translateY(-0.35rem);
-  pointer-events: none;
-  transition: max-height 0.25s ease, opacity 0.2s ease, transform 0.2s ease;
-}
-
-.project-card:hover .project-description,
-.project-card:focus-within .project-description {
-  max-height: 24rem;
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
-}
-
-.btn-project-detail {
-  margin-top: auto;
-  align-self: flex-start;
 }
 
 .btn-see-more {
@@ -177,6 +161,16 @@
 }
 
 .popup-github-link {
+  align-self: flex-start;
+}
+
+.popup-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.popup-download-link {
   align-self: flex-start;
 }
 
@@ -277,32 +271,6 @@
   height: 100%;
   object-fit: cover;
   opacity: 0.78;
-}
-
-.popup-thumbnail-label,
-.popup-thumbnail-badge {
-  position: absolute;
-  z-index: 1;
-}
-
-.popup-thumbnail-label {
-  left: 0.6rem;
-  bottom: 0.5rem;
-  color: var(--text);
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-}
-
-.popup-thumbnail-badge {
-  top: 0.55rem;
-  right: 0.55rem;
-  padding: 0.2rem 0.45rem;
-  border-radius: 999px;
-  background: rgba(0, 0, 0, 0.65);
-  color: var(--text);
-  font-size: 0.72rem;
 }
 
 .popup-info {
@@ -479,17 +447,6 @@
     flex: 0 0 auto;
   }
 
-  .project-card-content {
-    position: static;
-  }
-
-  .project-description {
-    max-height: 24rem;
-    opacity: 1;
-    transform: none;
-    pointer-events: auto;
-  }
-
   .popup-box {
     padding: 1rem;
   }
@@ -518,32 +475,31 @@
 }
 
 @media (hover: hover) {
-  .project-card {
-    overflow: visible;
-  }
-
   .project-card-content {
     position: absolute;
-    left: 0.85rem;
-    right: 0.85rem;
-    bottom: 0.85rem;
+    inset: 0;
     z-index: 1;
-    flex: 0 0 auto;
-    min-height: auto;
-    padding: 1rem;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: calc(var(--radius-md) - 2px);
+    justify-content: flex-end;
+    padding: 1.25rem;
     background:
-      linear-gradient(180deg, rgba(20, 25, 32, 0.18), rgba(20, 25, 32, 0.94) 28%, rgba(20, 25, 32, 0.98)),
-      rgba(20, 25, 32, 0.9);
-    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.28);
-    backdrop-filter: blur(10px);
+      linear-gradient(180deg, rgba(7, 12, 18, 0.02), rgba(7, 12, 18, 0.14) 40%, rgba(7, 12, 18, 0.94) 100%);
+    opacity: 0;
+    transform: translateY(1rem);
+    pointer-events: none;
+    transition: opacity 0.22s ease, transform 0.22s ease;
   }
 
   .project-card:hover .project-card-content,
+  .project-card:focus-visible .project-card-content,
   .project-card:focus-within .project-card-content {
-    box-shadow:
-      0 18px 32px rgba(0, 0, 0, 0.3),
-      0 0 0 1px rgba(255, 255, 255, 0.1);
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  .project-card:hover .project-cover,
+  .project-card:focus-visible .project-cover,
+  .project-card:focus-within .project-cover {
+    transform: scale(1.04);
   }
 }

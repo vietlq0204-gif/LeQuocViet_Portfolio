@@ -75,6 +75,7 @@
   border-radius: 30px;
   background-color: var(--surface);
   box-shadow: var(--shadow-lg);
+  cursor: pointer;
   transform-origin: center center;
   backface-visibility: hidden;
   will-change: transform, box-shadow;
@@ -82,6 +83,7 @@
 }
 
 .catalog-card:hover,
+.catalog-card:focus-visible,
 .catalog-card:focus-within {
   z-index: 2;
   transform: translateY(-6px) scale(1.02);
@@ -110,6 +112,7 @@
   display: block;
   object-fit: cover;
   border-radius: inherit;
+  transition: transform 0.28s ease;
 }
 
 .catalog-card-media-placeholder {
@@ -141,24 +144,6 @@
   margin: 0;
   color: var(--muted);
   line-height: 1.45;
-  overflow: hidden;
-  max-height: 0;
-  opacity: 0;
-  transform: translateY(-0.35rem);
-  pointer-events: none;
-  transition: max-height 0.25s ease, opacity 0.2s ease, transform 0.2s ease;
-}
-
-.catalog-card:hover .catalog-card-summary,
-.catalog-card:focus-within .catalog-card-summary {
-  max-height: 24rem;
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
-}
-
-.catalog-card-content .btn-project-detail {
-  margin-top: auto;
 }
 
 .catalog-empty {
@@ -200,33 +185,32 @@
 }
 
 @media (hover: hover) {
-  .catalog-card {
-    overflow: visible;
-  }
-
   .catalog-card-content {
     position: absolute;
-    left: 0.85rem;
-    right: 0.85rem;
-    bottom: 0.85rem;
+    inset: 0;
     z-index: 1;
-    flex: 0 0 auto;
-    min-height: auto;
-    padding: 1rem;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: calc(var(--radius-md) - 2px);
+    justify-content: flex-end;
+    padding: 1.25rem;
     background:
-      linear-gradient(180deg, rgba(20, 25, 32, 0.18), rgba(20, 25, 32, 0.94) 28%, rgba(20, 25, 32, 0.98)),
-      rgba(20, 25, 32, 0.9);
-    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.28);
-    backdrop-filter: blur(10px);
+      linear-gradient(180deg, rgba(7, 12, 18, 0.02), rgba(7, 12, 18, 0.14) 40%, rgba(7, 12, 18, 0.94) 100%);
+    opacity: 0;
+    transform: translateY(1rem);
+    pointer-events: none;
+    transition: opacity 0.22s ease, transform 0.22s ease;
   }
 
   .catalog-card:hover .catalog-card-content,
+  .catalog-card:focus-visible .catalog-card-content,
   .catalog-card:focus-within .catalog-card-content {
-    box-shadow:
-      0 18px 32px rgba(0, 0, 0, 0.3),
-      0 0 0 1px rgba(255, 255, 255, 0.1);
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  .catalog-card:hover .catalog-card-image,
+  .catalog-card:focus-visible .catalog-card-image,
+  .catalog-card:focus-within .catalog-card-image {
+    transform: scale(1.04);
   }
 }
 

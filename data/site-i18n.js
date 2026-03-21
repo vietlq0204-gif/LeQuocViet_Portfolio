@@ -43,6 +43,7 @@ window.PORTFOLIO_I18N = {
         seeMore: "See More",
         backHome: "Back Home",
         github: "GitHub",
+        download: "Download",
       },
       catalog: {
         game: "Game",
@@ -121,6 +122,7 @@ window.PORTFOLIO_I18N = {
         seeMore: "Xem Thêm",
         backHome: "Trang Chủ",
         github: "GitHub",
+        download: "Táº£i Xuá»‘ng",
       },
       catalog: {
         game: "Game",

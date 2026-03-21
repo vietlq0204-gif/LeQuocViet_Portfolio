@@ -72,7 +72,7 @@
                         <div class="popup-content-body">
                             <div class="featured-project-heading">
                                 <div>
-                                    <p class="section-label" data-i18n="featured.label">Featured Project</p>
+<!--                                    <p class="section-label" data-i18n="featured.label">Featured Project</p>-->
                                     <h2 id="featured-project-title"></h2>
                                 </div>
                                 <button
@@ -117,7 +117,11 @@
                 <article
                     class="project-card"
                     data-project-entry
-                    data-project-id="project-01"
+                    data-project-id="Sky Ascent"
+                    tabindex="0"
+                    role="button"
+                    aria-controls="project-popup"
+                    aria-haspopup="dialog"
                 >
                     <div class="project-card-media">
                         <img class="project-cover" src="" alt="" loading="lazy">
@@ -126,21 +130,36 @@
                     <div class="project-card-content">
                         <h3 class="project-name"></h3>
                         <p class="project-description"></p>
-                        <button
-                            class="btn-project-detail js-open-project-popup"
-                            type="button"
-                            aria-controls="project-popup"
-                            data-i18n="buttons.viewDetails"
-                        >
-                            View Details
-                        </button>
                     </div>
                 </article>
 
+                <article
+                        class="project-card"
+                        data-project-entry
+                        data-project-id="the-lost-reminiscence"
+                        tabindex="0"
+                        role="button"
+                        aria-controls="project-popup"
+                        aria-haspopup="dialog"
+                >
+                    <div class="project-card-media">
+                        <img class="project-cover" src="" alt="" loading="lazy">
+                    </div>
+
+                    <div class="project-card-content">
+                        <h3 class="project-name"></h3>
+                        <p class="project-description"></p>
+                    </div>
+                </article>
+                
                 <article
                     class="project-card"
                     data-project-entry
                     data-project-id="project-02"
+                    tabindex="0"
+                    role="button"
+                    aria-controls="project-popup"
+                    aria-haspopup="dialog"
                 >
                     <div class="project-card-media">
                         <img class="project-cover" src="" alt="" loading="lazy">
@@ -149,37 +168,6 @@
                     <div class="project-card-content">
                         <h3 class="project-name"></h3>
                         <p class="project-description"></p>
-                        <button
-                            class="btn-project-detail js-open-project-popup"
-                            type="button"
-                            aria-controls="project-popup"
-                            data-i18n="buttons.viewDetails"
-                        >
-                            View Details
-                        </button>
-                    </div>
-                </article>
-
-                <article
-                    class="project-card"
-                    data-project-entry
-                    data-project-id="project-03"
-                >
-                    <div class="project-card-media">
-                        <img class="project-cover" src="" alt="" loading="lazy">
-                    </div>
-
-                    <div class="project-card-content">
-                        <h3 class="project-name"></h3>
-                        <p class="project-description"></p>
-                        <button
-                            class="btn-project-detail js-open-project-popup"
-                            type="button"
-                            aria-controls="project-popup"
-                            data-i18n="buttons.viewDetails"
-                        >
-                            View Details
-                        </button>
                     </div>
                 </article>
             </div>
@@ -307,13 +295,23 @@
                         <div class="popup-tags"></div>
                     </div>
 
-                    <a
-                        class="btn-github popup-github-link"
-                        href=""
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        data-i18n="buttons.github"
-                    >GitHub</a>
+                    <div class="popup-links">
+                        <a
+                            class="btn-github popup-github-link"
+                            href=""
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            data-i18n="buttons.github"
+                        >GitHub</a>
+                        <a
+                            class="btn-download popup-download-link"
+                            href=""
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            data-i18n="buttons.download"
+                            hidden
+                        >Download</a>
+                    </div>
                 </aside>
             </div>
         </div>

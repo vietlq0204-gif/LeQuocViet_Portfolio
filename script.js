@@ -232,6 +232,12 @@ const renderProjectCards = (language) => {
     if (descriptionEl) {
       descriptionEl.textContent = localizeValue(project.summary, language) || localizeValue(project.overview, language) || "";
     }
+
+    card.tabIndex = 0;
+    card.setAttribute("role", "button");
+    card.setAttribute("aria-controls", "project-popup");
+    card.setAttribute("aria-haspopup", "dialog");
+    card.setAttribute("aria-label", title);
   });
 };
 
@@ -271,11 +277,15 @@ const renderProjectCatalog = (language, section = activeCatalogSection) => {
     const content = document.createElement("div");
     const titleEl = document.createElement("h3");
     const summaryEl = document.createElement("p");
-    const actionButton = document.createElement("button");
 
     card.className = "catalog-card";
     card.dataset.projectEntry = "";
     card.dataset.projectId = projectId;
+    card.tabIndex = 0;
+    card.setAttribute("role", "button");
+    card.setAttribute("aria-controls", "project-popup");
+    card.setAttribute("aria-haspopup", "dialog");
+    card.setAttribute("aria-label", title);
 
     media.className = "catalog-card-media";
     media.appendChild(createCatalogMediaElement(project, title, language));
@@ -286,12 +296,7 @@ const renderProjectCatalog = (language, section = activeCatalogSection) => {
     summaryEl.className = "catalog-card-summary";
     summaryEl.textContent = summary;
 
-    actionButton.className = "btn-project-detail js-open-project-popup";
-    actionButton.type = "button";
-    actionButton.setAttribute("aria-controls", "project-popup");
-    actionButton.textContent = getTranslation("buttons.viewDetails", language);
-
-    content.append(titleEl, summaryEl, actionButton);
+    content.append(titleEl, summaryEl);
     card.append(media, content);
     catalogGridEl.appendChild(card);
   });
@@ -321,6 +326,7 @@ const popupStageImageEl = popup?.querySelector(".popup-stage-image");
 const popupThumbnailsEl = popup?.querySelector(".popup-thumbnails");
 const popupCoverEl = popup?.querySelector(".popup-cover");
 const popupGithubBtn = popup?.querySelector(".btn-github");
+const popupDownloadBtn = popup?.querySelector(".btn-download");
 const popupTagsEl = popup?.querySelector(".popup-tags");
 const popupTagsBlockEl = popup?.querySelector(".popup-tags-block");
 const popupMetaFields = popup
@@ -443,18 +449,6 @@ const fillPopupMedia = (project, language) => {
       button.appendChild(image);
     }
 
-    const label = document.createElement("span");
-    label.className = "popup-thumbnail-label";
-    label.textContent = item.label;
-    button.appendChild(label);
-
-    if (item.type === "video") {
-      const badge = document.createElement("span");
-      badge.className = "popup-thumbnail-badge";
-      badge.textContent = getTranslation("popup.play", language);
-      button.appendChild(badge);
-    }
-
     button.addEventListener("click", () => {
       setMediaView(item, title, thumbnailButtons, language);
     });
@@ -528,6 +522,18 @@ const renderPopupProject = (projectId, language) => {
     } else {
       popupGithubBtn.hidden = true;
       popupGithubBtn.removeAttribute("href");
+    }
+  }
+
+  if (popupDownloadBtn) {
+    const downloadLink = localizeValue(project.download, language);
+
+    if (downloadLink) {
+      popupDownloadBtn.href = downloadLink;
+      popupDownloadBtn.hidden = false;
+    } else {
+      popupDownloadBtn.hidden = true;
+      popupDownloadBtn.removeAttribute("href");
     }
   }
 };
@@ -626,17 +632,24 @@ if (popup && projectStore) {
   document.addEventListener("click", (event) => {
     const button = event.target.closest(".js-open-project-popup");
 
-    if (!button) {
+    if (button) {
+      const entry = button.closest("[data-project-entry]");
+
+      if (!entry) {
+        return;
+      }
+
+      openPopup(entry.dataset.projectId, button);
       return;
     }
 
-    const entry = button.closest("[data-project-entry]");
+    const card = event.target.closest(".project-card[data-project-entry], .catalog-card[data-project-entry]");
 
-    if (!entry) {
+    if (!card) {
       return;
     }
 
-    openPopup(entry.dataset.projectId, button);
+    openPopup(card.dataset.projectId, card);
   });
 
   closeBtn?.addEventListener("click", closePopup);
@@ -650,7 +663,21 @@ if (popup && projectStore) {
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape" && !popup.hidden) {
       closePopup();
+      return;
     }
+
+    if (event.key !== "Enter" && event.key !== " ") {
+      return;
+    }
+
+    const card = event.target.closest(".project-card[data-project-entry], .catalog-card[data-project-entry]");
+
+    if (!card) {
+      return;
+    }
+
+    event.preventDefault();
+    openPopup(card.dataset.projectId, card);
   });
 
   window.addEventListener("pagehide", releasePreviewPlayers);

@@ -1,34 +1,98 @@
 window.PORTFOLIO_PROJECT_DATA = {
   featuredId: "the-lost-reminiscence",
   items: {
+    "Sky Ascent": {
+      title: {
+        en: "Sky Ascent",
+        vi: "Bay Lên Bầu Trời",
+      },
+      summary: {
+        en: "3D game, Hyper Casual, Android. Control your spaceship to fly to different planets in the solar system..",
+        vi: "trò chơi 3D,  Hyper Casual, Android. Điều khiển tàu không gian của bạn bay đến các hành tính khác nhau trong hệ mặt trời..",
+      },
+      overview: {
+        en: "Trong vai một phi công vũ trụ được giao nhiệm vụ tái khám phá và liên lạc với các hành tinh thuộc địa trong hệ mặt trời. Trong quá trình di chuyển  ta phải tránh né các chướng ngại vật, thu thập các đồng xu để nâng cấp tàu cho chuyển đi tiếp theo.",
+        vi: "Play as a space pilot tasked with rediscovering and making contact with colonized planets in the solar system. During the move, we must avoid obstacles and collect coins to upgrade the ship for the next move.",
+      },
+      technologies: {
+        en: ["Unity", "C#", "Event-Driven Architecture", "ScriptableObject", "Addressables", "Object Pooling", "State Machine"],
+        vi: ["Unity", "C#", "Event-Driven Architecture", "ScriptableObject", "Addressables", "Object Pooling", "State Machine"],
+      },
+      roles: {
+        en: ["modular JSON-based save/load system", "progression tree", "UI with UI Toolkit", "Optimized mobile runtime", "Integrated AdMob rewarded ads"],
+        vi: ["modular JSON-based save/load system", "progression tree", "UI with UI Toolkit", "Optimized mobile runtime", "Integrated AdMob rewarded ads"],
+      },
+      tags: {
+        en: ["3D", "Unity", "Android", "Hyper Casual", "Indie"],
+        vi: ["3D", "Unity", "Android", "Hyper Casual", "Indie"],
+      },
+      video: "https://www.youtube.com/embed/BPxnmbckYeY?autoplay=1&mute=1&loop=1&playlist=BPxnmbckYeY",
+      images: [
+        "https://res.cloudinary.com/dfzck0syr/image/upload/v1774079353/Screenshot_2026-03-20_183657_rpwqcf.png",
+        "https://res.cloudinary.com/dfzck0syr/image/upload/v1774079336/Screenshot_2026-03-21_144442_drj4ql.png",
+        "https://res.cloudinary.com/dfzck0syr/image/upload/v1774079336/Screenshot_2026-03-21_144507_tvodgf.png",
+        "https://res.cloudinary.com/dfzck0syr/image/upload/v1774079336/Screenshot_2026-03-21_144536_kockfd.png",
+        "https://res.cloudinary.com/dfzck0syr/image/upload/v1774079336/Screenshot_2026-03-21_144559_dqf3j5.png",
+      ],
+      cover: "",
+      review: {
+        en: "",
+        vi: "",
+      },
+      release: "2026",
+      developer: {
+        en: "DWA Studio",
+        vi: "DWA Studio",
+      },
+      publisher: {
+        en: "",
+        vi: "",
+      },
+      github: "https://github.com/vietlq0204-gif/Sky-Ascent-01",
+      download: "https://vietlq0204-gif.itch.io/skyascents",
+      catalog: {
+        section: "game",
+        cardPrimary: "video",
+      },
+    },
+
     "the-lost-reminiscence": {
       title: {
         en: "The Lost Reminiscence",
-        vi: "The Lost Reminiscence",
+        vi: "Hồi Ức Lạc Lối",
       },
       summary: {
-        en: "Story-driven puzzle game with three maps: Tutorial, Dungeon, and Boss Point.",
-        vi: "Game giải đố theo cốt truyện với ba map: Tutorial, Dungeon và Boss Point.",
+        en: "A 3D storytelling puzzle game with maps (Skyland, Illusion Maze, Rice Fields).",
+        vi: "Trò Chơi 3D giải đố kể chuyển với các bản đồ (Đảo Bay, Mê Cung Ảo Giác, Cánh Dồng lúa).",
       },
       overview: {
-        en: "A story-driven puzzle adventure built around exploration, environmental progression, and a boss finale. The project combines gameplay systems, custom UI flows, and performance-focused implementation for a smoother player experience.",
-        vi: "Một dự án game giải đố theo cốt truyện, tập trung vào khám phá, tiến trình môi trường và màn boss cuối. Dự án kết hợp gameplay systems, UI flow tùy biến và cách triển khai tối ưu hiệu năng để đem lại trải nghiệm mượt hơn.",
+        en: "The story is about a depressed man who gets into a car accident. Waking up in a strange place, he must explore and find a way out to return to reality.",
+        vi: "Câu chuyện kể về một người đàn ông trầm cảm bị tai nạn xe hơi. Tỉnh dậy ở một nơi xa lạ, anh phải khám phá và tìm lối thoát để trở về thực tại.",
       },
       technologies: {
         en: ["Unity", "C#", "MongoDB Atlas", "Addressables", "Behavior Graph", "Timeline", "FMOD Studio"],
         vi: ["Unity", "C#", "MongoDB Atlas", "Addressables", "Behavior Graph", "Timeline", "FMOD Studio"],
       },
       roles: {
-        en: ["Local save/load system", "Player controller", "Book-style UI flow", "Scene loading optimization"],
-        vi: ["Hệ thống save/load local", "Điều khiển nhân vật", "UI flow dạng sách", "Tối ưu thời gian chuyển scene"],
+        en: ["Local save/load system", "Player controller", "Book-style UI flow"],
+        vi: ["Hệ thống save/load local", "Điều khiển nhân vật", "UI dạng cuốn sách"],
       },
       tags: {
-        en: ["Puzzle", "Narrative", "Boss Fight", "UI Systems"],
-        vi: ["Giải Đố", "Cốt Truyện", "Boss Fight", "UI Systems"],
+        en: ["3D", "Windows", "Puzzle", "storytelling", "Discover"],
+        vi: ["3D", "Windows", "Giải Đố", "kể chuyện", "Khám phá"],
       },
       video: "https://www.youtube.com/embed/ER8aVIo1Ujw?autoplay=1&mute=1&loop=1&playlist=ER8aVIo1Ujw",
       images: [
-        "https://res.cloudinary.com/dfzck0syr/image/upload/v1773413646/Unity_logo_animated_k2gelh.gif",
+        "https://res.cloudinary.com/dfzck0syr/image/upload/v1773732656/Screenshot_2026-03-17_141942_uwkd8q.png",
+        "https://res.cloudinary.com/dfzck0syr/image/upload/v1773732654/Screenshot_2026-03-17_141300_tlts6l.png",
+        "https://res.cloudinary.com/dfzck0syr/image/upload/v1773732651/Screenshot_2026-03-17_140858_n9y9kx.png",
+        "https://res.cloudinary.com/dfzck0syr/image/upload/v1773732651/Screenshot_2026-03-17_141223_iikcgr.png",
+        "https://res.cloudinary.com/dfzck0syr/image/upload/v1773732651/Screenshot_2026-03-17_140620_yxyft5.png",
+        "https://res.cloudinary.com/dfzck0syr/image/upload/v1773732650/Screenshot_2026-03-17_141109_afciuy.png",
+        "https://res.cloudinary.com/dfzck0syr/image/upload/v1773732650/Screenshot_2026-03-17_141030_eni4c4.png",
+        "https://res.cloudinary.com/dfzck0syr/image/upload/v1773732649/Screenshot_2026-03-17_141955_ync8oy.png",
+        "https://res.cloudinary.com/dfzck0syr/image/upload/v1773732648/Screenshot_2026-03-17_140803_ashdnp.png",
+        "https://res.cloudinary.com/dfzck0syr/image/upload/v1773732648/Screenshot_2026-03-17_140740_ger9le.png",
       ],
       cover: "",
       review: {
@@ -36,66 +100,19 @@ window.PORTFOLIO_PROJECT_DATA = {
         vi: "Dự Án Nổi Bật",
       },
       release: "2025",
-      developer: "Le Quoc Viet",
+      developer: "DWA Studio",
       publisher: {
-        en: "Personal Portfolio",
-        vi: "Portfolio Cá Nhân",
+        en: "",
+        vi: "",
       },
-      github: "",
+      github: "https://github.com/NV-Tu0403/The_Lost_Reminiscence",
+      download: "https://drive.google.com/drive/folders/1lp4FAwx2rUtjP1h8JrKKQTXsoxrHk9z8",
       catalog: {
         section: "game",
         cardPrimary: "video",
       },
     },
-    "project-01": {
-      title: {
-        en: "Project 01",
-        vi: "Dự Án 01",
-      },
-      summary: {
-        en: "Co-op action game where two players defend their village against skeletons and plant bosses.",
-        vi: "Game co-op hành động nơi hai người chơi bảo vệ ngôi làng trước skeleton và plant boss.",
-      },
-      overview: {
-        en: "Co-op game for two players fighting skeletons and carnivorous plant bosses to protect their village.",
-        vi: "Game co-op dành cho hai người chơi chiến đấu với skeleton và plant boss để bảo vệ ngôi làng.",
-      },
-      technologies: {
-        en: ["Unity", "C#", "Photon", "Addressables", "DOTween"],
-        vi: ["Unity", "C#", "Photon", "Addressables", "DOTween"],
-      },
-      roles: {
-        en: ["Save and load system", "Player controller", "Performance optimization"],
-        vi: ["Hệ thống save/load", "Điều khiển nhân vật", "Tối ưu hiệu năng"],
-      },
-      tags: {
-        en: ["Co-op", "Action", "Boss Fight", "Online"],
-        vi: ["Co-op", "Hành Động", "Boss Fight", "Online"],
-      },
-      video: "https://www.youtube.com/embed/X8BGi_DiW9k?autoplay=1&mute=1&loop=1&playlist=X8BGi_DiW9k",
-      images: [
-        "https://res.cloudinary.com/dfzck0syr/image/upload/v1773413646/Unity_logo_animated_k2gelh.gif",
-      ],
-      cover: "",
-      review: {
-        en: "Portfolio Build",
-        vi: "Bản Dựng Portfolio",
-      },
-      release: "2025",
-      developer: {
-        en: "DuckLe04 Team",
-        vi: "Nhóm DuckLe04",
-      },
-      publisher: {
-        en: "Personal Project",
-        vi: "Dự Án Cá Nhân",
-      },
-      github: "https://github.com/DuckLe04/Game_Online",
-      catalog: {
-        section: "game",
-        cardPrimary: "video",
-      },
-    },
+    
     "project-02": {
       title: {
         en: "Project 02",
@@ -140,11 +157,13 @@ window.PORTFOLIO_PROJECT_DATA = {
         vi: "Dự Án Cá Nhân",
       },
       github: "https://github.com/DuckLe04/GameNC_New",
+      download: "",
       catalog: {
         section: "game",
         cardPrimary: "video",
       },
     },
+    
     "project-03": {
       title: {
         en: "Project 03",
@@ -189,6 +208,7 @@ window.PORTFOLIO_PROJECT_DATA = {
         vi: "Dự Án Cá Nhân",
       },
       github: "https://github.com/Sticky1705/DuAn1",
+      download: "",
       catalog: {
         section: "game",
         cardPrimary: "image",
