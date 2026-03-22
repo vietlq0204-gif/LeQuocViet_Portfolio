@@ -293,6 +293,7 @@
 
 .info-box {
   display: grid;
+  align-content: start;
   gap: 0.75rem;
   padding: 1rem;
   border: 1px solid var(--panel-border-soft);
