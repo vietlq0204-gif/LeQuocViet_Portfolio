@@ -30,7 +30,7 @@ window.PORTFOLIO_I18N = (() => {
       },
       summary: {
         en: "Full stack game developer with Unity and C#.",
-        vi: "Lập trình viên game full-stack với Unity và C#.",
+        vi: "Lập trình viên trò chơi full-stack với Unity và C#.",
       },
     },
     featured: {
@@ -42,7 +42,7 @@ window.PORTFOLIO_I18N = (() => {
     sections: {
       selectedWork: {
         en: "Selected Work",
-        vi: "Dự Án Tiêu Biểu",
+        vi: "Dự Án Nổi Bật",
       },
       projects: {
         en: "Projects",
@@ -76,7 +76,7 @@ window.PORTFOLIO_I18N = (() => {
       },
       myRole: {
         en: "My Role",
-        vi: "Vai Trò",
+        vi: "Vai Trò Của Tôi",
       },
       review: {
         en: "Review",
@@ -95,8 +95,8 @@ window.PORTFOLIO_I18N = (() => {
         vi: "Phát Hành",
       },
       popularTags: {
-        en: "Popular Tags",
-        vi: "Thẻ Phổ Biến",
+        en: "Tags",
+        vi: "Thẻ",
       },
     },
     buttons: {
@@ -113,7 +113,7 @@ window.PORTFOLIO_I18N = (() => {
         vi: "Xem Thêm",
       },
       backHome: {
-        en: "Back Home",
+        en: "Home",
         vi: "Trang Chủ",
       },
       github: {
@@ -217,6 +217,10 @@ window.PORTFOLIO_I18N = (() => {
       email: {
         en: "Email",
         vi: "Email",
+      },
+      social: {
+        en: "Social",
+        vi: "Mạng Xã Hội",
       },
       copyright: {
         en: "Copyright 2025 (c) Le Quoc Viet",

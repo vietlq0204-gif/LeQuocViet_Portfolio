@@ -1,5 +1,6 @@
 const i18nStore = window.PORTFOLIO_I18N;
 const projectStore = window.PORTFOLIO_PROJECT_DATA;
+const footerStore = window.PORTFOLIO_FOOTER_LINKS;
 const languageStorageKey = "portfolio-language";
 const defaultCatalogSection = "game";
 
@@ -82,10 +83,12 @@ const fillTranslatedList = (listElement, key, language) => {
 };
 
 let currentLanguage = getSupportedLanguage(localStorage.getItem(languageStorageKey) || i18nStore?.defaultLanguage);
-const languageToggleButton = document.getElementById("language-toggle");
+const languageToggleButtons = Array.from(document.querySelectorAll("[data-language-toggle]"));
 const catalogGridEl = document.querySelector("[data-project-catalog-grid]");
 const catalogEmptyEl = document.querySelector("[data-project-catalog-empty]");
 const catalogFilterButtons = Array.from(document.querySelectorAll("[data-project-filter]"));
+const footerContactLinksEl = document.querySelector("[data-footer-contact-links]");
+const footerSocialLinksEl = document.querySelector("[data-footer-social-links]");
 const utilityBarMediaQuery = window.matchMedia("(max-width: 768px)");
 
 let activeCatalogSection =
@@ -162,10 +165,10 @@ const applyStaticTranslations = (language) => {
     fillTranslatedList(element, element.dataset.i18nList, language);
   });
 
-  if (languageToggleButton) {
-    languageToggleButton.textContent = language.toUpperCase();
-    languageToggleButton.setAttribute("aria-pressed", "true");
-  }
+  languageToggleButtons.forEach((button) => {
+    button.textContent = language.toUpperCase();
+    button.setAttribute("aria-pressed", "true");
+  });
 };
 
 const renderFeaturedProject = (language) => {
@@ -201,6 +204,12 @@ const renderFeaturedProject = (language) => {
 
   fillList(roleEl, localizeValue(project.roles, language) || []);
   fillList(techEl, localizeValue(project.technologies, language) || []);
+
+  featuredElement.tabIndex = 0;
+  featuredElement.setAttribute("role", "button");
+  featuredElement.setAttribute("aria-controls", "project-popup");
+  featuredElement.setAttribute("aria-haspopup", "dialog");
+  featuredElement.setAttribute("aria-label", title);
 };
 
 const renderProjectCards = (language) => {
@@ -309,6 +318,81 @@ const renderProjectCatalog = (language, section = activeCatalogSection) => {
     button.classList.toggle("is-active", isActive);
     button.setAttribute("aria-pressed", String(isActive));
   });
+};
+
+const getFooterLinkText = (item, language) => {
+  const customText = localizeValue(item?.text, language);
+
+  if (customText) {
+    return customText;
+  }
+
+  const href = item?.href || "";
+
+  if (/^mailto:/i.test(href)) {
+    return href.replace(/^mailto:/i, "");
+  }
+
+  if (/^tel:/i.test(href)) {
+    return href.replace(/^tel:/i, "");
+  }
+
+  return localizeValue(item?.label, language) || item?.id || "Link";
+};
+
+const createFooterLinkElement = (item, language, variant = "icon") => {
+  const link = document.createElement("a");
+  const href = item?.href || "#footer";
+  const label = localizeValue(item?.label, language) || item?.id || "Link";
+
+  link.className = variant === "text" ? "footer-link" : "footer-icon-link";
+  link.href = href;
+  link.setAttribute("aria-label", label);
+  link.title = label;
+
+  if (item?.newTab && /^https?:\/\//i.test(href)) {
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+  }
+
+  if (variant === "text") {
+    link.textContent = getFooterLinkText(item, language);
+    return link;
+  }
+
+  if (item?.icon) {
+    const image = document.createElement("img");
+    image.className = "footer-icon-image";
+    image.src = item.icon;
+    image.alt = "";
+    image.loading = "lazy";
+    link.appendChild(image);
+    return link;
+  }
+
+  const placeholder = document.createElement("span");
+  placeholder.className = "footer-icon-placeholder";
+  placeholder.setAttribute("aria-hidden", "true");
+  placeholder.textContent = item?.fallback || label.slice(0, 2).toUpperCase();
+  link.appendChild(placeholder);
+  return link;
+};
+
+const renderFooterLinks = (container, items, language, variant = "icon") => {
+  if (!container) {
+    return;
+  }
+
+  container.replaceChildren();
+
+  (items || []).forEach((item) => {
+    container.appendChild(createFooterLinkElement(item, language, variant));
+  });
+};
+
+const renderFooter = (language) => {
+  renderFooterLinks(footerContactLinksEl, footerStore?.contact, language, "text");
+  renderFooterLinks(footerSocialLinksEl, footerStore?.social, language, "icon");
 };
 
 const popup = document.getElementById("project-popup");
@@ -593,6 +677,7 @@ const renderLanguage = (language) => {
   localStorage.setItem(languageStorageKey, currentLanguage);
 
   applyStaticTranslations(currentLanguage);
+  renderFooter(currentLanguage);
   renderFeaturedProject(currentLanguage);
   renderProjectCards(currentLanguage);
   renderProjectCatalog(currentLanguage, activeCatalogSection);
@@ -605,9 +690,11 @@ const renderLanguage = (language) => {
 if (i18nStore && projectStore) {
   renderLanguage(currentLanguage);
 
-  languageToggleButton?.addEventListener("click", () => {
-    const nextLanguage = currentLanguage === "en" ? "vi" : "en";
-    renderLanguage(nextLanguage);
+  languageToggleButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const nextLanguage = currentLanguage === "en" ? "vi" : "en";
+      renderLanguage(nextLanguage);
+    });
   });
 
   catalogFilterButtons.forEach((button) => {
@@ -642,7 +729,7 @@ if (popup && projectStore) {
       return;
     }
 
-    const card = event.target.closest(".project-card[data-project-entry], .catalog-card[data-project-entry]");
+    const card = event.target.closest(".featured-project[data-project-entry], .project-card[data-project-entry], .catalog-card[data-project-entry]");
 
     if (!card) {
       return;
@@ -669,7 +756,7 @@ if (popup && projectStore) {
       return;
     }
 
-    const card = event.target.closest(".project-card[data-project-entry], .catalog-card[data-project-entry]");
+    const card = event.target.closest(".featured-project[data-project-entry], .project-card[data-project-entry], .catalog-card[data-project-entry]");
 
     if (!card) {
       return;

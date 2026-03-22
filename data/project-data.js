@@ -10,16 +10,16 @@ window.PORTFOLIO_PROJECT_DATA = {
         vi: "Trò chơi 3D,  Hyper Casual, Android. Điều khiển tàu không gian của bạn bay đến các hành tính khác nhau trong hệ mặt trời.",
       },
       overview: {
-        en: "Trong vai một phi công vũ trụ được giao nhiệm vụ tái khám phá và liên lạc với các hành tinh thuộc địa trong hệ mặt trời. Trong quá trình di chuyển  ta phải tránh né các chướng ngại vật, thu thập các đồng xu để nâng cấp tàu cho chuyển đi tiếp theo.",
-        vi: "Play as a space pilot tasked with rediscovering and making contact with colonized planets in the solar system. During the move, we must avoid obstacles and collect coins to upgrade the ship for the next move.",
+        en: "Play as a space pilot tasked with rediscovering and making contact with colonized planets in the solar system. During the move, we must avoid obstacles and collect coins to upgrade the ship for the next move.",
+        vi: "Trong vai một phi công vũ trụ được giao nhiệm vụ tái khám phá và liên lạc với các hành tinh thuộc địa trong hệ mặt trời. Trong quá trình di chuyển ta phải tránh né các chướng ngại vật, thu thập các đồng xu để nâng cấp tàu cho chuyến đi tiếp theo.",
       },
       technologies: {
         en: ["Unity", "C#", "Event-Driven Architecture", "ScriptableObject", "Addressables", "Object Pooling", "State Machine"],
         vi: ["Unity", "C#", "Event-Driven Architecture", "ScriptableObject", "Addressables", "Object Pooling", "State Machine"],
       },
       roles: {
-        en: ["Modular JSON-based save/load system", "Progression tree", "UI with UI Toolkit", "Optimized mobile runtime", "Integrated AdMob rewarded ads"],
-        vi: ["Modular JSON-based save/load system", "Progression tree", "UI with UI Toolkit", "Optimized mobile runtime", "Integrated AdMob rewarded ads"],
+        en: ["Modular JSON-based save/load", "Progression tree with SO", "Build UI with UI Toolkit", "Optimized mobile device", "Integrated AdMob"],
+        vi: ["Modular JSON-based save/load", "Cây tiến trình với SO", "Xây dựng UI với UI Toolkit", "Tối ưu hóa cho thiết bị di động", "Tích hợp Google AdMob"],
       },
       tags: {
         en: ["3D", "Unity", "Android", "Hyper Casual", "Indie"],
@@ -66,7 +66,7 @@ window.PORTFOLIO_PROJECT_DATA = {
       },
       overview: {
         en: "The story is about a depressed man who gets into a car accident. Waking up in a strange place, he must explore and find a way out to return to reality.",
-        vi: "Câu chuyện kể về một người đàn ông trầm cảm bị tai nạn xe hơi. Tỉnh dậy ở một nơi xa lạ, anh phải khám phá và tìm lối thoát để trở về thực tại.",
+        vi: "Câu chuyện kể về một người đàn ông trầm cảm bị tai nạn xe. Tỉnh dậy ở một nơi xa lạ, anh phải khám phá và tìm lối thoát để trở về thực tại.",
       },
       technologies: {
         en: ["Unity", "C#", "MongoDB Atlas", "Addressables", "Behavior Graph", "Timeline", "FMOD Studio"],
@@ -77,8 +77,8 @@ window.PORTFOLIO_PROJECT_DATA = {
         vi: ["Hệ thống save/load local", "Điều khiển nhân vật", "UI dạng cuốn sách"],
       },
       tags: {
-        en: ["3D", "Windows", "Puzzle", "storytelling", "Discover"],
-        vi: ["3D", "Windows", "Giải Đố", "kể chuyện", "Khám phá"],
+        en: ["3D", "Windows", "Puzzle", "storytelling", "Discover", "Indie"],
+        vi: ["3D", "Windows", "Giải Đố", "kể chuyện", "Khám phá", "Indie"],
       },
       video: "https://www.youtube.com/embed/ER8aVIo1Ujw?autoplay=1&mute=1&loop=1&playlist=ER8aVIo1Ujw",
       images: [
@@ -213,7 +213,5 @@ window.PORTFOLIO_PROJECT_DATA = {
         cardPrimary: "image",
       },
     },
-    
-    
   },
 };
