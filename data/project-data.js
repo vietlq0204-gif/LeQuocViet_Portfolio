@@ -14,8 +14,8 @@ window.PORTFOLIO_PROJECT_DATA = {
         vi: "Trong vai một phi công vũ trụ được giao nhiệm vụ tái khám phá và liên lạc với các hành tinh thuộc địa trong hệ mặt trời. Trong quá trình di chuyển ta phải tránh né các chướng ngại vật, thu thập các đồng xu để nâng cấp tàu cho chuyến đi tiếp theo.",
       },
       technologies: {
-        en: ["Unity", "C#", "Event-Driven Architecture", "ScriptableObject", "Addressables", "Object Pooling", "State Machine"],
-        vi: ["Unity", "C#", "Event-Driven Architecture", "ScriptableObject", "Addressables", "Object Pooling", "State Machine"],
+        en: ["Unity", "C#", "Event-Driven", "Adapter-Driven", "ScriptableObject", "Addressables", "Object Pooling", "Google Admob"],
+        vi: ["Unity", "C#", "Event-Driven", "Adapter-Driven", "ScriptableObject", "Addressables", "Object Pooling", "Google Admob"],
       },
       roles: {
         en: ["Modular JSON-based save/load", "Progression tree with SO", "Build UI with UI Toolkit", "Optimized mobile device", "Integrated AdMob"],

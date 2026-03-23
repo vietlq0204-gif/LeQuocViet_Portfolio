@@ -185,19 +185,19 @@ window.PORTFOLIO_I18N = (() => {
       skills: {
         en: [
           "C# (.NET), Unity 2D / 3D.",
-          "Observer, State Machine, Strategy, Factory, DI, MVC, Singleton, DTO.",
+          "Observer, State Machine, Strategy, Factory, DI, Singleton, DTO.",
           "OOP, SOLID, Data-Driven, Adapter-Driven, Component-Based.",
           "GC Allocation, Object Pooling, Unity Profiler.",
           "GitHub, UI Toolkit , Android Studio, Google AdMob.",
-          "Teamwor, Self-learning and Research Ability, Able to use AI tools to speed up work.",
+          "Teamwork, Self-learning and Research Ability, Able to use AI tools to speed up work.",
         ],
         vi: [
           "C# (.NET), Unity 2D / 3D.",
-          "Observer, State Machine, Strategy, Factory, DI, MVC, Singleton, DTO.",
+          "Observer, State Machine, Strategy, Factory, DI, Singleton, DTO.",
           "OOP, SOLID, Data-Driven, Adapter-Driven, Component-Based.",
           "GC Allocation, Object Pooling, Unity Profiler.",
           "GitHub, UI Toolkit , Android Studio, Google AdMob.",
-          "Teamwor, Self-learning and Research Ability, Able to use AI tools to speed up work.",
+          "Teamwork, Self-learning and Research Ability, Able to use AI tools to speed up work.",
         ],
       },
     },
