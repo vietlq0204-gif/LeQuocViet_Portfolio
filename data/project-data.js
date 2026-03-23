@@ -80,7 +80,7 @@ window.PORTFOLIO_PROJECT_DATA = {
         en: ["3D", "Windows", "Puzzle", "storytelling", "Discover", "Indie"],
         vi: ["3D", "Windows", "Giải Đố", "kể chuyện", "Khám phá", "Indie"],
       },
-      video: "https://www.youtube.com/embed/ER8aVIo1Ujw?autoplay=1&mute=1&loop=1&playlist=ER8aVIo1Ujw",
+      video: "https://www.youtube.com/embed/sM9z-kBcw6Y?autoplay=1&mute=1&loop=1&playlist=sM9z-kBcw6Y",
       images: [
         "https://res.cloudinary.com/dfzck0syr/image/upload/v1773732656/Screenshot_2026-03-17_141942_uwkd8q.png",
         "https://res.cloudinary.com/dfzck0syr/image/upload/v1773732654/Screenshot_2026-03-17_141300_tlts6l.png",
