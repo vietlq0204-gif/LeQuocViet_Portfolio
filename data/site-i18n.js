@@ -184,7 +184,7 @@ window.PORTFOLIO_I18N = (() => {
       },
       skills: {
         en: [
-          "C# (.NET), Unity 2D / 3D, Coroutine, Async / Await",
+          "C#, Unity 2D / 3D, Coroutine, Async / Await",
           "Observer, Singleton, Strategy, Factory, DTO",
           "OOP, SOLID, MVC, MVP, MVVM, Data-Driven, Event-Driven, Component-Based, State Machine, Object Pooling",
           "Gameplay Mechanics, Animation System, UI/UX Design, Game Physics, Asset Integration",
@@ -193,13 +193,13 @@ window.PORTFOLIO_I18N = (() => {
           "Debugging, Troubleshooting",
         ],
         vi: [
-          "C# (.NET), Unity 2D / 3D, Coroutine, Async/Await",
+          "C#, Unity 2D / 3D, Coroutine, Async / Await",
           "Observer, Singleton, Strategy, Factory, DTO",
           "OOP, SOLID, MVC, MVP, MVVM, Data-Driven, Event-Driven, Component-Based, State Machine, Object Pooling",
           "Gameplay Mechanics, Animation System, UI/UX Design, Game Physics, Asset Integration",
           "GitHub, UI Toolkit, Google AdMob",
-          "Optimize for Android and Windows",
-          "Debugging, Troubleshooting",
+          "Tối ưu cho Android và Windows",
+          "Gõ lỗi, Khắc phục sự cố",
         ],
       },
     },
